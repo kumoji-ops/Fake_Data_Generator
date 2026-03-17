@@ -149,3 +149,33 @@ body {
         text-align: center;
     }
 }
+
+/* footer  */
+
+
+.privacy-policy {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.privacy-policy h2 {
+    color: #13254e;
+    margin-bottom: 10px;
+}
+
+.privacy-policy h3 {
+    color: #0f172a;
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+}
+
+.privacy-policy p {
+    color: #334155;
+    margin-bottom: 10px;
+}
