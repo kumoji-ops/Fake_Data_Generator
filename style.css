@@ -1,9 +1,11 @@
 * {
     font-family: 'Inter', system-ui, sans-serif;
     color: #0f172a;
+    box-sizing: border-box;  /* ADDED: Makes padding/borders behave consistently */
 }
+
 body {
-    background: #f8fafc;
+    background: #ccd5df;
     color: #0f172a;
     min-height: 100vh;
     display: flex;
@@ -11,31 +13,101 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    margin: 0;  /* ADDED: Removes default browser margin */
+}
+.title{
+    color: #13254e;
 }
 
-.input-group {
-    display: flex;        /* Puts items in a row */
-    align-items: center;  /* Aligns them vertically */
-    gap: 10px;           /* Space between input and button */
-    margin-top: 20px;     /* Space above the group */
+/* CHANGED:rgb(148, 155, 167)ls container - stacks everything vertically */
+.controls-container {
+    display: flex;
+    flex-direction: column;  /* Stack children vertically */
+    align-items: center;     /* Center horizontally */
+    gap: 15px;               /* Space between rows */
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;        /* Limit width for better look */
 }
 
-.button {
-    padding: 10px 20px;
+/* NEW: Each row contains label + input/select */
+.control-row {
+    display: flex;
+    align-items: center;     /* Align label and input vertically */
+    width: 100%;
+    gap: 10px;               /* Space between label and input */
 }
 
-.pre {
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin-top: 20px;
+/* NEW: Labels have fixed width so all inputs align */
+.control-row label {
+    width: 140px;            /* Same width for all labels */
+    text-align: right;       /* Text aligns to the right */
+    font-weight: 500;
 }
-select {
-    padding: 1px 2px;
-    border-radius: 4px;
+
+/* UPDATED: Inputs and selects take remaining space */
+.control-row input,
+.control-row select {
+    flex: 1;                 /* Take up remaining space */
+    padding: 8px 10px;       /* Better padding */
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
     background: white;
 }
 
-#customDomain {
-    border: 1px solid #646363;
-    border-radius: 4px;
+/* UPDATED: Buttons */
+.control-row button {
+    flex: 0 0 auto;         /* Don't stretch */
+    padding: 8px 20px;
+    background:  #0f172a;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;  /* Smooth hover effect */
 }
+
+.control-row button:hover {
+    background:  #4b4e55;   /* Darker blue on hover */
+}
+
+/* UPDATED: Custom domain input */
+#customDomain {
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;       /* Match other inputs */
+    font-size: 1rem;
+    width: 100%;             /* Take full width of its container */
+}
+
+/* UPDATED: Output styling */
+#output {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;    /* Keeps formatting */
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);  /* Subtle shadow */
+    
+        /* Add this line */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+.record {
+    background-color:#ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+

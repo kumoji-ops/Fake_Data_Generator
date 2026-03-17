@@ -29,24 +29,28 @@ function randomPhone() {
     return countryCode + " " + areaCode + " " + prefix + " " + lineNumber;
 }
 
-function generateData(){
-
+function generateData() {
     let count = parseInt(document.getElementById("count").value);
-    let output = "";
+    let output = document.getElementById("output");
+    
+    // Clear previous content
+    output.innerHTML = "";
 
-    for(let i=0;i<count;i++){
-
+    for (let i = 0; i < count; i++) {
         let name = randomName();
-
-        output +=
-        "Name: " + name + "\n" +
-        "Email: " + randomEmail(name) + "\n" +
-        "Phone: " + randomPhone() + "\n\n";
+        
+        // Create record div with class
+        let record = document.createElement("div");
+        record.className = "record";
+        
+        record.innerHTML = 
+            "Name: " + name + "<br>" +
+            "Email: " + randomEmail(name) + "<br>" +
+            "Phone: " + randomPhone();
+        
+        output.appendChild(record);
     }
-
-    document.getElementById("output").textContent = output;
 }
-
 function copyToClipboard() {
     const output = document.getElementById("output").textContent;
     navigator.clipboard.writeText(output);

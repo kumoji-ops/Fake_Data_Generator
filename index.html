@@ -6,38 +6,48 @@
     <title>Fake Data Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     
-    <h1>Fake Data Generator</h1>
+    <h1 class="title">Fake Data Generator</h1>
 
-    <div class ="input-group">
-         <label>Number of users:</label>
-         <input type="number" id="count" value="5">
+    <!-- MAIN CONTAINER for all controls - stacked vertically -->
+    <div class="controls-container">
+        
+        <!-- ROW 1: Number of users -->
+        <div class="control-row">
+            <label>Number of users:</label>
+            <input type="number" id="count" value="5">
+        </div>
 
-         <!-- Email domain dropdown -->
+        <!-- ROW 2: Email domain dropdown -->
+        <div class="control-row">
+            <label>Email domain:</label>
+            <select id="emailDomain">
+                <option value="gmail.com">Gmail</option>
+                <option value="yahoo.com">Yahoo</option>
+                <option value="hotmail.com">Hotmail</option>
+                <option value="outlook.com">Outlook</option>
+                <option value="aol.com">AOL</option>
+                <option value="icloud.com">iCloud</option>
+                <option value="protonmail.com">ProtonMail</option>
+                <option value="mail.com">Mail.com</option>
+                <option value="yandex.com">Yandex</option>
+                <option value="gmx.com">GMX</option>
+                <option value="custom">Custom domain...</option>
+            </select>
+        </div>
 
-        <select id="emailDomain">
-        <option value="gmail.com">Gmail</option>
-        <option value="yahoo.com">Yahoo</option>
-        <option value="hotmail.com">Hotmail</option>
-        <option value="outlook.com">Outlook</option>
-        <option value="aol.com">AOL</option>
-        <option value="icloud.com">iCloud</option>
-        <option value="protonmail.com">ProtonMail</option>
-        <option value="mail.com">Mail.com</option>
-        <option value="yandex.com">Yandex</option>
-        <option value="gmx.com">GMX</option>
-        <option value="custom">Custom domain...</option>
-    </select>
+        <!-- ROW 3: Custom domain input (hidden by default) -->
+        <div class="control-row" id="customDomainRow" style="display: none;">
+            <label>Custom domain:</label>
+            <input type="text" id="customDomain" placeholder="example.com">
+        </div>
 
-          <input class="customDomain" type="text" id="customDomain" placeholder="Enter domain" style="display: none;">
-
-
-          <!-- Phone format and country code together -->
-<div style="display: flex; gap: 10px; align-items: center;">
-    <select id="countryCode">
-        <option value="+1">🇺🇸 USA/Canada (+1)</option>
+        <!-- ROW 4: Country code dropdown -->
+        <div class="control-row">
+            <label>Country code:</label>
+            <select id="countryCode">
+<option value="+1">🇺🇸 USA/Canada (+1)</option>
         <option value="+44">🇬🇧 UK (+44)</option>
         <option value="+33">🇫🇷 France (+33)</option>
         <option value="+49">🇩🇪 Germany (+49)</option>
@@ -121,20 +131,26 @@
         <option value="+505">🇳🇮 Nicaragua (+505)</option>
         <option value="+506">🇨🇷 Costa Rica (+506)</option>
         <option value="+507">🇵🇦 Panama (+507)</option>
-    </select>
+                <!-- ... rest of your country codes ... -->
+            </select>
+        </div>
 
-
-         <button onclick="generateData()">Generate</button>
-         
+        <!-- ROW 5: Generate button -->
+        <!-- ROW 5: Both buttons together -->
+<div class="control-row">
+    <label></label> <!-- Empty label for spacing -->
+    <div style="display: flex; gap: 10px; width: 70%;">
+        <button onclick="generateData()" style="flex: 1;">Generate</button>
+        <button onclick="copyToClipboard()" style="flex: 1;">Copy All</button>
     </div>
-    <button onclick="copyToClipboard()">Copy All</button>
+</div>
 
+    </div>
 
     <pre id="output"></pre>
 
     <script src="data/names.js"></script>
     <script src="script.js"></script>
-    
     
 </body>
 </html>
