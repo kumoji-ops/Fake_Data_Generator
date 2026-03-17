@@ -1,0 +1,41 @@
+* {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #0f172a;
+}
+body {
+    background: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.input-group {
+    display: flex;        /* Puts items in a row */
+    align-items: center;  /* Aligns them vertically */
+    gap: 10px;           /* Space between input and button */
+    margin-top: 20px;     /* Space above the group */
+}
+
+.button {
+    padding: 10px 20px;
+}
+
+.pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-top: 20px;
+}
+select {
+    padding: 1px 2px;
+    border-radius: 4px;
+    background: white;
+}
+
+#customDomain {
+    border: 1px solid #646363;
+    border-radius: 4px;
+}
