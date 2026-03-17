@@ -110,4 +110,53 @@ body {
     border-radius: 5px;
 }
 
+/* Default for desktop */
+#output {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Changed from 9 to 4 for desktop */
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
 
+/* Tablet */
+@media (max-width: 768px) {
+    #output {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    #output {
+        grid-template-columns: 1fr; /* 1 column on phone */
+    }
+    
+    .controls-container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .control-row {
+        flex-direction: column; /* Stack labels above inputs */
+        align-items: flex-start;
+    }
+    
+    .control-row label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    
+    .control-row input,
+    .control-row select {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.8rem; /* Smaller title on phone */
+        text-align: center;
+    }
+}
