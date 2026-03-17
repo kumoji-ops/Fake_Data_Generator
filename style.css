@@ -110,17 +110,6 @@ body {
     border-radius: 5px;
 }
 
-/* Default for desktop */
-#output {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Changed from 9 to 4 for desktop */
-    gap: 15px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
 /* Tablet */
 @media (max-width: 768px) {
     #output {
